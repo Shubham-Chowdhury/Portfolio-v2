@@ -1,52 +1,79 @@
 import React from 'react';
-import { Code2, Layout, Database, Brain, Wrench, Layers } from 'lucide-react';
+import { Code2, Layout, Database, Brain, Wrench, Layers, Cpu } from 'lucide-react';
+import {
+  SiCplusplus,
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiHtml5,
+  SiCss,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiPostgresql,
+  SiGit,
+  SiGithub,
+  SiRaspberrypi,
+  SiPlatformio,
+  SiOpencv,
+} from 'react-icons/si';
+import { VscVscode } from 'react-icons/vsc';
 
 const techCategories = [
   {
     title: 'Languages',
     icon: Code2,
     skills: [
-      { name: 'C++', desc: 'Primary for DSA & Systems' },
-      { name: 'Python', desc: 'AI/ML & Data Science' },
-      { name: 'JavaScript', desc: 'Web Logic & Scripting' },
-      { name: 'TypeScript', desc: 'Type-Safe Applications' },
+      { name: 'C++', desc: 'Primary for DSA & Systems', icon: SiCplusplus },
+      { name: 'Python', desc: 'AI/ML & Automation', icon: SiPython },
+      { name: 'JavaScript', desc: 'Web Logic & Scripting', icon: SiJavascript },
+      { name: 'TypeScript', desc: 'Type-Safe Applications', icon: SiTypescript },
     ],
   },
   {
     title: 'Frontend Development',
     icon: Layout,
     skills: [
-      { name: 'React', desc: 'Component Architecture' },
-      { name: 'HTML5', desc: 'Semantic Structure' },
-      { name: 'CSS3', desc: 'Responsive Layouts' },
-      { name: 'Tailwind CSS', desc: 'Utility Design System' },
+      { name: 'React', desc: 'Component Architecture', icon: SiReact },
+      { name: 'HTML5', desc: 'Semantic Markup', icon: SiHtml5 },
+      { name: 'CSS3', desc: 'Responsive Styling', icon: SiCss },
+      { name: 'Tailwind CSS', desc: 'Utility Design System', icon: SiTailwindcss },
     ],
   },
   {
     title: 'Backend & Database',
     icon: Database,
     skills: [
-      { name: 'Node.js', desc: 'Server-Side JS Runtime' },
-      { name: 'PostgreSQL', desc: 'Relational Database' },
-      { name: 'SQL', desc: 'Queries & Data Modeling' },
+      { name: 'Node.js', desc: 'Server-Side JS Runtime', icon: SiNodedotjs },
+      { name: 'PostgreSQL', desc: 'Relational Database', icon: SiPostgresql },
+      { name: 'SQL', desc: 'Queries & Data Modeling', icon: Database },
     ],
   },
   {
-    title: 'AI & Machine Learning',
+    title: 'AI & Computer Vision',
     icon: Brain,
     skills: [
-      { name: 'Python ML', desc: 'NumPy, Pandas, Scikit' },
-      { name: 'Machine Learning', desc: 'Supervised & Unsupervised' },
-      { name: 'Artificial Intelligence', desc: 'Neural Networks & Models' },
+      { name: 'Python ML', desc: 'NumPy, Pandas, Scikit-Learn', icon: SiPython },
+      { name: 'Computer Vision / YOLO', desc: 'Object Detection & Inference', icon: Brain },
+      { name: 'OpenCV', desc: 'Image Processing & Filters', icon: SiOpencv },
+    ],
+  },
+  {
+    title: 'Embedded Systems',
+    icon: Cpu,
+    skills: [
+      { name: 'Raspberry Pi', desc: 'Single-Board Processing', icon: SiRaspberrypi },
+      { name: 'ESP32', desc: 'Microcontroller & Wireless', icon: Cpu },
+      { name: 'PlatformIO', desc: 'Embedded Development IDE', icon: SiPlatformio },
     ],
   },
   {
     title: 'Developer Tools',
     icon: Wrench,
     skills: [
-      { name: 'Git', desc: 'Version Control System' },
-      { name: 'GitHub', desc: 'Code Collaboration' },
-      { name: 'VS Code', desc: 'Primary IDE Setup' },
+      { name: 'Git', desc: 'Version Control System', icon: SiGit },
+      { name: 'GitHub', desc: 'Code Collaboration', icon: SiGithub },
+      { name: 'VS Code', desc: 'Primary IDE Environment', icon: VscVscode },
     ],
   },
 ];
@@ -88,18 +115,26 @@ export const TechStack: React.FC = () => {
 
                 {/* Skill Cards */}
                 <div className="space-y-2">
-                  {cat.skills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className="p-3 rounded-lg bg-zinc-900/40 border border-zinc-800/50 hover:bg-zinc-900 hover:border-zinc-700 transition-colors flex items-center justify-between"
-                    >
-                      <div>
-                        <div className="text-xs font-bold text-white">{skill.name}</div>
-                        <div className="text-[11px] text-zinc-500">{skill.desc}</div>
+                  {cat.skills.map((skill) => {
+                    const SkillIcon = skill.icon;
+                    return (
+                      <div
+                        key={skill.name}
+                        className="p-3 rounded-lg bg-zinc-900/40 border border-zinc-800/50 hover:bg-zinc-900 hover:border-zinc-700 transition-colors flex items-center justify-between group/skill"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-7 h-7 rounded-md bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover/skill:text-white transition-colors">
+                            <SkillIcon className="w-3.5 h-3.5" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-bold text-white">{skill.name}</div>
+                            <div className="text-[11px] text-zinc-500">{skill.desc}</div>
+                          </div>
+                        </div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover/skill:bg-zinc-300 transition-colors" />
                       </div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
 
               </div>
@@ -111,3 +146,4 @@ export const TechStack: React.FC = () => {
     </section>
   );
 };
+

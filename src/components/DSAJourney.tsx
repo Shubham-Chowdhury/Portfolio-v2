@@ -4,45 +4,52 @@ import { Terminal } from 'lucide-react';
 const dsaTopics = [
   {
     topic: 'C++ Fundamentals & STL',
-    status: 'Mastered',
+    status: 'Practicing',
     desc: 'Vectors, Maps, Sets, Iterators, Custom Comparators, Fast I/O, Pointers & Memory Management.',
-    level: 95,
+    stage: 'Core Stage 1',
+    progress: 90,
   },
   {
     topic: 'Arrays, Strings & Two Pointers',
-    status: 'Mastered',
+    status: 'Practicing',
     desc: 'Sliding Window, Prefix Sums, Binary Search, Kadane Algorithm, Sorting & Searching techniques.',
-    level: 92,
+    stage: 'Core Stage 2',
+    progress: 85,
   },
   {
     topic: 'Linked Lists & Stacks / Queues',
-    status: 'Mastered',
+    status: 'Practicing',
     desc: 'Singly/Doubly Linked Lists, Fast & Slow Pointers, Monotonic Stack, Queue Operations.',
-    level: 90,
+    stage: 'Core Stage 3',
+    progress: 80,
   },
   {
     topic: 'Recursion & Backtracking',
-    status: 'Advanced',
-    desc: 'Subsets, Permutations, N-Queens, Sudoku Solver, Combination Sum & State Space Trees.',
-    level: 88,
+    status: 'Learning',
+    desc: 'Subsets, Permutations, N-Queens, Combination Sum & State Space Tree explorations.',
+    stage: 'Core Stage 4',
+    progress: 70,
   },
   {
     topic: 'Trees & Binary Search Trees',
-    status: 'Advanced',
-    desc: 'Traversals (DFS/BFS), LCA, BST Operations, Tree DP, Height & Diameter optimizations.',
-    level: 85,
+    status: 'Learning',
+    desc: 'Traversals (DFS/BFS), LCA, BST Operations, Tree DP, Height & Diameter algorithms.',
+    stage: 'Core Stage 5',
+    progress: 65,
   },
   {
     topic: 'Graphs & Shortest Paths',
-    status: 'Proficient',
-    desc: 'BFS, DFS, Dijkstra, Bellman-Ford, Topological Sort, Disjoint Set Union (DSU), Kruskal.',
-    level: 82,
+    status: 'Exploring',
+    desc: 'BFS, DFS, Dijkstra, Bellman-Ford, Topological Sort, Disjoint Set Union (DSU).',
+    stage: 'Core Stage 6',
+    progress: 55,
   },
   {
     topic: 'Dynamic Programming',
-    status: 'Proficient',
-    desc: '1D & 2D Memoization, Tabulation, Knapsack variations, LCS, LIS, Matrix Chain Multiplication.',
-    level: 80,
+    status: 'Currently Studying',
+    desc: '1D & 2D Memoization, Tabulation, Knapsack variations, LCS, LIS implementations.',
+    stage: 'Core Stage 7',
+    progress: 45,
   },
 ];
 
@@ -72,27 +79,27 @@ export const DSAJourney: React.FC = () => {
 
             <div>
               <h3 className="text-xl font-display font-bold text-white">
-                Algorithmic Foundations
+                Algorithmic Learning Roadmap
               </h3>
               <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-                Systematic mastery of computational efficiency, time & space complexities, and core Data Structures in modern C++.
+                Consistent learning and practice of computational thinking, algorithm design, and core Data Structures using C++.
               </p>
             </div>
 
             <div className="space-y-3 pt-2">
               <div className="p-3.5 rounded-xl bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-between text-xs">
                 <span className="text-zinc-400">Primary Language</span>
-                <span className="font-mono font-bold text-white">C++17 / C++20</span>
+                <span className="font-mono font-bold text-white">C++ (Standard Library)</span>
               </div>
 
               <div className="p-3.5 rounded-xl bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-between text-xs">
-                <span className="text-zinc-400">Problem Solving Methodology</span>
-                <span className="font-mono font-bold text-white">First Principles</span>
+                <span className="text-zinc-400">Learning Approach</span>
+                <span className="font-mono font-bold text-white">First Principles & Practice</span>
               </div>
 
               <div className="p-3.5 rounded-xl bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-between text-xs">
-                <span className="text-zinc-400">Target Complexity</span>
-                <span className="font-mono font-bold text-white">O(N log N) / O(N)</span>
+                <span className="text-zinc-400">Current Focus</span>
+                <span className="font-mono font-bold text-white">Core DSA Topics</span>
               </div>
             </div>
           </div>
@@ -118,8 +125,8 @@ export const DSAJourney: React.FC = () => {
                     <span className="px-2.5 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 font-mono text-[11px]">
                       {item.status}
                     </span>
-                    <span className="font-mono font-semibold text-zinc-400">
-                      {item.level}%
+                    <span className="font-mono text-[11px] text-zinc-400">
+                      {item.stage}
                     </span>
                   </div>
                 </div>
@@ -128,12 +135,12 @@ export const DSAJourney: React.FC = () => {
                   {item.desc}
                 </p>
 
-                {/* Progress Bar */}
+                {/* Progress Bar reflecting learning progression */}
                 <div className="pl-9">
                   <div className="w-full h-1.5 rounded-full bg-zinc-900 overflow-hidden">
                     <div
                       className="h-full bg-zinc-200 rounded-full"
-                      style={{ width: `${item.level}%` }}
+                      style={{ width: `${item.progress}%` }}
                     />
                   </div>
                 </div>
@@ -147,3 +154,4 @@ export const DSAJourney: React.FC = () => {
     </section>
   );
 };
+

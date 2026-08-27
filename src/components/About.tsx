@@ -13,7 +13,7 @@ export const About: React.FC = () => {
             About Me
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">
-            Architecting Logic from First Principles
+            Building Strong Foundations in Software & AI
           </h2>
         </div>
 
@@ -49,18 +49,13 @@ export const About: React.FC = () => {
             
             <div className="space-y-3">
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-white leading-snug">
-                First-Principles Engineer & AI Specialist
+                Computer Science & Systems Student
               </h3>
               <p className="text-zinc-300 leading-relaxed text-base">
-                I am a B.Tech Computer Science and Engineering student at Lovely Professional University, 
-                specializing in Artificial Intelligence and Machine Learning. Driven by curiosity and a commitment to 
-                first-principles thinking, I build software solutions rooted in deep algorithmic understanding and optimal systemic design.
+                I am a B.Tech Computer Science and Engineering student specializing in Artificial Intelligence and Machine Learning at Lovely Professional University. I am focused on building strong computer science fundamentals and understanding how systems work from first principles rather than relying solely on high-level frameworks.
               </p>
               <p className="text-zinc-400 leading-relaxed text-base">
-                My primary expertise centers around <strong className="text-white">C++ Data Structures and Algorithms</strong>, 
-                exploring low-level memory efficiency, system architecture, and cutting-edge AI model implementation. Whether developing 
-                intelligent software applications or engineering embedded solutions, my target remains constant: 
-                <span className="text-white font-medium"> to evolve into a world-class software engineer who solves complex computational challenges.</span>
+                I am actively learning and practicing Data Structures and Algorithms using <strong className="text-white">C++</strong>. My technical interests span software engineering, artificial intelligence, machine learning, embedded systems, and computer vision. My goal is to continuously improve through hands-on projects, rigorous problem solving, and practical technology that addresses meaningful real-world challenges.
               </p>
             </div>
 
@@ -86,7 +81,7 @@ export const About: React.FC = () => {
 
               <div className="space-y-1 border-l border-zinc-900 pl-4">
                 <div className="text-2xl sm:text-3xl font-extrabold text-white font-display">
-                  4+
+                  3
                 </div>
                 <div className="text-xs text-zinc-500 font-medium uppercase tracking-wider font-mono">
                   Core Projects
@@ -103,7 +98,7 @@ export const About: React.FC = () => {
                 </div>
                 <h4 className="text-sm font-bold text-white">Core Fundamentals</h4>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Rigorous focus on C++, Memory Management, OOP, and Algorithmic Problem Solving.
+                  Focus on C++, memory layout, object-oriented concepts, and structured problem solving.
                 </p>
               </div>
 
@@ -111,9 +106,9 @@ export const About: React.FC = () => {
                 <div className="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center border border-zinc-800 text-white">
                   <Sparkles className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm font-bold text-white">Artificial Intelligence</h4>
+                <h4 className="text-sm font-bold text-white">AI & Machine Learning</h4>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Machine Learning workflows, model architecture, and predictive intelligent systems.
+                  Exploring machine learning models, computer vision applications, and intelligence workflows.
                 </p>
               </div>
 
@@ -121,9 +116,9 @@ export const About: React.FC = () => {
                 <div className="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center border border-zinc-800 text-white">
                   <Cpu className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm font-bold text-white">Embedded & Software</h4>
+                <h4 className="text-sm font-bold text-white">Embedded Systems</h4>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Hardware-software interface exploration, firmware logic, and full-stack integration.
+                  Hardware-software interface concepts using Raspberry Pi, ESP32, and sensor integrations.
                 </p>
               </div>
 
@@ -131,9 +126,9 @@ export const About: React.FC = () => {
                 <div className="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center border border-zinc-800 text-white">
                   <Target className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm font-bold text-white">Ultimate Mission</h4>
+                <h4 className="text-sm font-bold text-white">Practical Engineering</h4>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Building high-performance, impactful software engineering systems at scale.
+                  Dedicated to building software solutions that solve real-world engineering problems.
                 </p>
               </div>
 
@@ -147,3 +142,4 @@ export const About: React.FC = () => {
     </section>
   );
 };
+

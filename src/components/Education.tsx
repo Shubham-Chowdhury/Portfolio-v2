@@ -2,12 +2,12 @@ import React from 'react';
 import { GraduationCap, Award, BookOpen, Calendar, CheckCircle2 } from 'lucide-react';
 
 const courses = [
-  { name: 'Data Structures & Algorithms in C++', score: 98, status: 'Mastered' },
-  { name: 'Object Oriented Programming', score: 96, status: 'Completed' },
-  { name: 'Artificial Intelligence & ML', score: 95, status: 'In Progress' },
-  { name: 'Database Management Systems', score: 94, status: 'Completed' },
-  { name: 'Operating Systems & Architecture', score: 92, status: 'Completed' },
-  { name: 'Discrete Mathematics & Logic', score: 96, status: 'Completed' },
+  { name: 'Data Structures & Algorithms in C++', progress: 95, status: 'Active Study' },
+  { name: 'Object Oriented Programming (C++)', progress: 92, status: 'Completed' },
+  { name: 'Artificial Intelligence & ML Fundamentals', progress: 88, status: 'In Progress' },
+  { name: 'Database Management Systems (DBMS)', progress: 90, status: 'Completed' },
+  { name: 'Operating Systems & Architecture', progress: 85, status: 'Completed' },
+  { name: 'Discrete Mathematics & Logic', progress: 92, status: 'Completed' },
 ];
 
 export const Education: React.FC = () => {
@@ -19,7 +19,7 @@ export const Education: React.FC = () => {
         <div className="space-y-2 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-400">
             <GraduationCap className="w-3.5 h-3.5 text-zinc-300" />
-            Academic Excellence
+            Academic Foundation
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">
             Education & Academic Performance
@@ -59,22 +59,22 @@ export const Education: React.FC = () => {
               <div className="space-y-3 pt-2 text-xs text-zinc-400">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-zinc-500" />
-                  <span>2023 - 2027 (Expected)</span>
+                  <span>2023 - 2027 (Currently Pursuing)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-zinc-500" />
-                  <span>Consistently ranked in top percentile of department</span>
+                  <span>Consistent academic performance across terms</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <BookOpen className="w-4 h-4 text-zinc-500" />
-                  <span>Focus on Theoretical CS & Systems Engineering</span>
+                  <span>Focus on CS Fundamentals, AI/ML & Systems Logic</span>
                 </div>
               </div>
 
               {/* Key Stat Highlight */}
               <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-between">
                 <div>
-                  <div className="text-xs text-zinc-400">Highest Course Grade</div>
+                  <div className="text-xs text-zinc-400">Highest Course Score</div>
                   <div className="text-lg font-bold text-white">97 / 100</div>
                 </div>
                 <CheckCircle2 className="w-5 h-5 text-white" />
@@ -88,10 +88,10 @@ export const Education: React.FC = () => {
             
             <div>
               <h3 className="text-lg font-display font-bold text-white">
-                Coursework & Domain Proficiency
+                Coursework & Subject Coverage
               </h3>
               <p className="text-xs text-zinc-400 mt-1">
-                Monochrome evaluation of core computer science subjects.
+                Monochrome progression tracking core computer science domains.
               </p>
             </div>
 
@@ -101,7 +101,6 @@ export const Education: React.FC = () => {
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-semibold text-zinc-200">{course.name}</span>
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-zinc-400">{course.score}%</span>
                       <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-[10px] text-zinc-400 font-mono">
                         {course.status}
                       </span>
@@ -112,7 +111,7 @@ export const Education: React.FC = () => {
                   <div className="w-full h-2 rounded-full bg-zinc-900 overflow-hidden p-0.5 border border-zinc-800/60">
                     <div
                       className="h-full rounded-full bg-white transition-all duration-700 ease-out"
-                      style={{ width: `${course.score}%` }}
+                      style={{ width: `${course.progress}%` }}
                     />
                   </div>
                 </div>
@@ -127,3 +126,4 @@ export const Education: React.FC = () => {
     </section>
   );
 };
+
