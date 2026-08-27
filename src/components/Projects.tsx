@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FolderGit2, ArrowUpRight, ChevronDown, ChevronUp, Cpu, Brain, Lock } from 'lucide-react';
+import { FolderGit2, ArrowUpRight, ChevronDown, ChevronUp, Cpu, Brain } from 'lucide-react';
 import {
   SiPython,
   SiCplusplus,
@@ -7,6 +7,9 @@ import {
   SiPlatformio,
   SiGit,
   SiGithub,
+  SiPytorch,
+  SiOpencv,
+  SiPandas,
 } from 'react-icons/si';
 
 interface ProjectItem {
@@ -26,18 +29,18 @@ const realProjects: ProjectItem[] = [
     title: 'SpeedSense AI',
     category: 'Embedded AI / Computer Vision',
     summary:
-      'An intelligent speed-governance system combining real-time computer vision, edge processing, and hardware motor control.',
+      'An AI-powered speed governance system that detects road speed-limit signs using YOLOv8 and computer vision to control vehicle speed in real-time.',
     lines: [
-      'Line 01 [Problem]: Addresses vehicle overspeeding and road safety risks caused by missed or unobserved speed limit signs.',
-      'Line 02 [Context]: Traditional manual compliance relies strictly on driver attention, which can be prone to human oversight.',
-      'Line 03 [Computer Vision]: Leverages real-time computer vision streams to actively scan and recognize road signage.',
-      'Line 04 [YOLOv8 Model]: Utilizes a custom-trained YOLOv8 object detection model optimized for speed limit sign identification.',
-      'Line 05 [Edge Processing]: Runs real-time vision inferencing onboard a Raspberry Pi edge computing unit.',
-      'Line 06 [Hardware Integration]: Communicates with an ESP32 microcontroller for direct hardware actuation and signal processing.',
-      'Line 07 [GPS Fallback]: Integrates a GPS module as a secondary fallback reference when visual sign visibility is degraded.',
-      'Line 08 [Motor Control]: Interfaces with an L298N motor driver via PlatformIO firmware logic for governed speed regulation.',
-      'Line 09 [Prototype Result]: Successfully built a proof-of-concept embedded system showcasing automated speed-governance behavior.',
-      'Line 10 [Key Learnings]: Gained deep experience in edge model optimization, hardware-software interfacing, and real-time vision pipelines.',
+      'Line 01 [System Goal]: Developed an AI-powered speed governance system detecting road speed-limit signs using YOLOv8 and computer vision.',
+      'Line 02 [Hardware Control]: Integrated ESP32, GPS, and motor-control hardware to translate detected speed limits into real-time vehicle speed control.',
+      'Line 03 [Fallback Mechanism]: Implemented a fallback mechanism using GPS-based speed-limit data for when traffic-sign detection is unavailable.',
+      'Line 04 [OLED Display]: Built an ESP32-based dashboard with an OLED display showing real-time speed limit and system status information.',
+      'Line 05 [Edge Inferencing]: Executed real-time YOLOv8 object detection inferencing on a Raspberry Pi single-board computer.',
+      'Line 06 [Microcontroller Firmware]: Programmed ESP32 microcontroller logic via PlatformIO for rapid signal processing and hardware triggers.',
+      'Line 07 [Motor Actuation]: Interfaced L298N motor driver modules to govern hardware motor response dynamically based on vision data.',
+      'Line 08 [Vision Pipeline]: Optimized image frames for rapid low-latency detection under variable lighting and road conditions.',
+      'Line 09 [Project Outcome]: Delivered a fully functional embedded prototype combining vision AI with hardware speed regulation.',
+      'Line 10 [Key Learnings]: Gained hands-on experience in edge AI optimization, micro-controller interfacing, and real-time vision pipelines.',
     ],
     tags: [
       { name: 'Python', icon: SiPython },
@@ -48,34 +51,37 @@ const realProjects: ProjectItem[] = [
       { name: 'ESP32', icon: Cpu },
       { name: 'PlatformIO', icon: SiPlatformio },
     ],
-    github: '',
+    github: 'https://github.com/Shubham-Chowdhury',
     demo: '',
   },
   {
     id: 2,
     title: 'Burha Luit',
-    category: 'Software & Community Technology',
+    category: 'AI & Geospatial Flood Intelligence',
     summary:
-      'A specialized software application designed to address real-world community challenges and local environmental workflows.',
+      'An AI-powered flood intelligence system assessing flood risk for individual locations, delivering early warnings and computing safe evacuation routes.',
     lines: [
-      'Line 01 [Overview]: Burha Luit is a software solution named in honor of the river Brahmaputra.',
-      'Line 02 [Problem]: Formulated to address regional information access and community awareness challenges.',
-      'Line 03 [Target Audience]: Intended for local communities, civic participants, and public stakeholders.',
-      'Line 04 [Core Purpose]: Delivers structured data views and accessible information tracking for local workflows.',
-      'Line 05 [Key Feature 1]: Implements responsive dashboard interfaces for clear information dissemination.',
-      'Line 06 [Key Feature 2]: Provides structured modular components for data analysis and reporting.',
-      'Line 07 [Tech Stack]: Built using core software engineering practices, C++, and modern script logic.',
-      'Line 08 [Architecture]: Utilizes lightweight data structures to maintain low latency and operational efficiency.',
-      'Line 09 [Current Status]: Functions as a working prototype demonstrating localized software engineering.',
-      'Line 10 [Learnings & Notes]: Taught fundamental lessons in domain-specific problem formulation and UI state logic. [Editable Slot: Insert exact GitHub repo URL / extra live details when ready].',
+      'Line 01 [System Purpose]: Built an AI-powered flood intelligence system assessing location-specific flood risk and providing early warnings.',
+      'Line 02 [ML Risk Pipeline]: Developed a machine learning pipeline analyzing rainfall, river levels, elevation, terrain, and historical flood patterns.',
+      'Line 03 [Evacuation Module]: Designed an intelligent evacuation module identifying safer routes during flood events via GIS road-network data.',
+      'Line 04 [Centralized Platform]: Engineered a centralized platform for flood-risk visualization, enabling users to assess location vulnerability.',
+      'Line 05 [Deep Learning]: Applied PyTorch and Scikit-learn models for predictive flood-risk scoring based on environmental parameters.',
+      'Line 06 [Data Analytics]: Utilized Pandas and NumPy for spatial data preprocessing, rainfall metrics analysis, and terrain raster modeling.',
+      'Line 07 [Computer Vision]: Integrated OpenCV for processing aerial elevation maps and satellite flood extent imagery.',
+      'Line 08 [API & GPS Integration]: Connected REST APIs and GPS telemetry to track dynamic flood conditions and update evacuation routes.',
+      'Line 09 [Achieved Impact]: Created a unified solution for location vulnerability assessment, risk monitoring, and informed evacuation decisions.',
+      'Line 10 [Key Learnings]: Advanced skills in geospatial analytics, deep learning prediction, and route optimization algorithms under dynamic constraints.',
     ],
     tags: [
-      { name: 'C++', icon: SiCplusplus },
       { name: 'Python', icon: SiPython },
-      { name: 'Software Engineering', icon: SiGithub },
-      { name: 'Git', icon: SiGit },
+      { name: 'PyTorch', icon: SiPytorch },
+      { name: 'Scikit-learn', icon: Brain },
+      { name: 'Pandas', icon: SiPandas },
+      { name: 'OpenCV', icon: SiOpencv },
+      { name: 'Deep Learning', icon: Brain },
+      { name: 'GIS / GPS', icon: SiGithub },
     ],
-    github: '',
+    github: 'https://github.com/Shubham-Chowdhury',
     demo: '',
   },
   {
@@ -83,10 +89,10 @@ const realProjects: ProjectItem[] = [
     title: 'UrbanPath — Smart City Planner',
     category: 'Software & Urban Graph Analytics',
     summary:
-      'An algorithmic city planning and path optimization tool designed to model urban connectivity and resource allocation.',
+      'An algorithmic city planning and path optimization tool designed to model urban connectivity, graph networks, and resource allocation.',
     lines: [
       'Line 01 [Purpose]: Developed to model urban road networks and compute optimal infrastructure planning decisions.',
-      'Line 02 [Planning Challenge]: Addresses congestion and inefficient municipal expansion through graph-based modeling.',
+      'Line 02 [Planning Challenge]: Addresses traffic congestion and inefficient municipal expansion through graph-based modeling.',
       'Line 03 [User Experience]: Offers an intuitive command and visual workspace for planning simulated urban layouts.',
       'Line 04 [Core Functionality]: Enables dynamic graph creation with customized nodes (districts) and weighted edges (roads).',
       'Line 05 [Algorithmic Routing]: Applies Dijkstra and Shortest Path algorithms for efficient route finding across city sectors.',
@@ -94,7 +100,7 @@ const realProjects: ProjectItem[] = [
       'Line 07 [Technology Stack]: Implemented in C++ utilizing Standard Template Library (STL) data structures.',
       'Line 08 [System Structure]: Designed with modular OOP principles separating graph representation from solver algorithms.',
       'Line 09 [Accomplishment]: Demonstrates reliable O(N log N) graph traversal and network evaluation on complex topologies.',
-      'Line 10 [Learnings]: Reinforced advanced graph algorithm implementations, spatial data structures, and software architecture.',
+      'Line 10 [Key Learnings]: Reinforced advanced graph algorithm implementations, spatial data structures, and clean C++ software architecture.',
     ],
     tags: [
       { name: 'C++', icon: SiCplusplus },
@@ -102,7 +108,7 @@ const realProjects: ProjectItem[] = [
       { name: 'Graph Theory', icon: Cpu },
       { name: 'Algorithms', icon: Brain },
     ],
-    github: '',
+    github: 'https://github.com/Shubham-Chowdhury',
     demo: '',
   },
 ];
@@ -223,7 +229,7 @@ export const Projects: React.FC = () => {
                 {/* Card Footer Links */}
                 <div className="pt-6 border-t border-zinc-900 flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    {project.github ? (
+                    {project.github && (
                       <a
                         href={project.github}
                         target="_blank"
@@ -231,13 +237,8 @@ export const Projects: React.FC = () => {
                         className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-400 hover:text-white transition-colors"
                       >
                         <SiGithub className="w-4 h-4" />
-                        Code Repository
+                        GitHub Repository
                       </a>
-                    ) : (
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-500 cursor-not-allowed">
-                        <Lock className="w-3.5 h-3.5" />
-                        Repository Available Upon Request / Coming Soon
-                      </span>
                     )}
 
                     {project.demo && (
@@ -253,9 +254,14 @@ export const Projects: React.FC = () => {
                     )}
                   </div>
 
-                  <div className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-zinc-600 transition-all">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-zinc-600 transition-all"
+                  >
                     <ArrowUpRight className="w-4 h-4" />
-                  </div>
+                  </a>
                 </div>
 
               </div>
@@ -267,4 +273,5 @@ export const Projects: React.FC = () => {
     </section>
   );
 };
+
 

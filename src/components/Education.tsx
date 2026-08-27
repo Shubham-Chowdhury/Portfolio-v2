@@ -59,15 +59,15 @@ export const Education: React.FC = () => {
               <div className="space-y-3 pt-2 text-xs text-zinc-400">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-zinc-500" />
-                  <span>2023 - 2027 (Currently Pursuing)</span>
+                  <span>Aug 2025 - Present (Pursuing)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-zinc-500" />
-                  <span>Consistent academic performance across terms</span>
+                  <span>KV NFR Maligaon (12th): <strong className="text-zinc-200">85.7%</strong> (2023 - 2024)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <BookOpen className="w-4 h-4 text-zinc-500" />
-                  <span>Focus on CS Fundamentals, AI/ML & Systems Logic</span>
+                  <span>KV NFR Maligaon (10th): <strong className="text-zinc-200">92.2%</strong> (2021 - 2022)</span>
                 </div>
               </div>
 

@@ -73,7 +73,7 @@ export const Contact: React.FC = () => {
             </a>
 
             <a
-              href="https://github.com"
+              href="https://github.com/Shubham-Chowdhury"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 hover:text-white transition-colors font-medium"
@@ -83,7 +83,7 @@ export const Contact: React.FC = () => {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/shubham-141013-chowdhury"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 hover:text-white transition-colors font-medium"
