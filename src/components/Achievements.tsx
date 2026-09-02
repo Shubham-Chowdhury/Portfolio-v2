@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Award, Trophy, Star, Zap, ExternalLink, X, Image as ImageIcon, Sparkles, Terminal } from 'lucide-react';
+import { Award, Trophy, Star, Zap, ExternalLink, X, Image as ImageIcon, Sparkles, Terminal, Code2 } from 'lucide-react';
 import { SiGeeksforgeeks, SiHackerrank, SiGithub } from 'react-icons/si';
 
 interface CertificateItem {
@@ -12,6 +12,14 @@ interface CertificateItem {
 }
 
 const certifications: CertificateItem[] = [
+  {
+    id: 'codextreme-c',
+    title: 'CodeXtreme 4.0 – C Programming',
+    issuer: 'iamneo / LPU',
+    date: 'April 2, 2026',
+    image: '/certificates/codextreme-c.png',
+    desc: 'Certificate of Appreciation for securing Top 30 Position in CodeXtreme 4.0 – C Programming event held at Lovely Professional University.',
+  },
   {
     id: 'gfg-cpp',
     title: 'C++ Programming Course - Self Paced',
@@ -39,6 +47,13 @@ const certifications: CertificateItem[] = [
 ];
 
 const achievements = [
+  {
+    icon: Code2,
+    title: 'Top 30 — CodeXtreme 4.0 (C Programming)',
+    category: 'Coding Achievement',
+    desc: 'Secured Top 30 Position in CodeXtreme 4.0 – C Programming event held at Lovely Professional University, organized by iamneo (Cert No: 18ch6Bi1C12c66CJ2BK1).',
+    date: 'Apr 2026',
+  },
   {
     icon: SiHackerrank,
     title: 'HackerRank Gold Badge',
@@ -95,11 +110,11 @@ export const Achievements: React.FC = () => {
               Verified Certifications
             </h3>
             <span className="text-xs font-mono text-zinc-500">
-              3 Official Certificates
+              {certifications.length} Official Certificates
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {certifications.map((cert) => (
               <div
                 key={cert.id}

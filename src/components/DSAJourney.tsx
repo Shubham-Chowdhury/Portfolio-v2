@@ -122,10 +122,13 @@ export const DSAJourney: React.FC = () => {
                   </div>
 
                   <div className="flex items-center gap-3 text-xs">
+                    <span className="font-mono text-[11px] text-zinc-400 font-medium">
+                      {item.progress}%
+                    </span>
                     <span className="px-2.5 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 font-mono text-[11px]">
                       {item.status}
                     </span>
-                    <span className="font-mono text-[11px] text-zinc-400">
+                    <span className="font-mono text-[11px] text-zinc-500">
                       {item.stage}
                     </span>
                   </div>
@@ -137,9 +140,9 @@ export const DSAJourney: React.FC = () => {
 
                 {/* Progress Bar reflecting learning progression */}
                 <div className="pl-9">
-                  <div className="w-full h-1.5 rounded-full bg-zinc-900 overflow-hidden">
+                  <div className="w-full h-1.5 rounded-full bg-zinc-900 overflow-hidden border border-zinc-800/80">
                     <div
-                      className="h-full bg-zinc-200 rounded-full"
+                      className="h-full bg-gradient-to-r from-zinc-400 via-zinc-200 to-white rounded-full transition-all duration-700 ease-out"
                       style={{ width: `${item.progress}%` }}
                     />
                   </div>

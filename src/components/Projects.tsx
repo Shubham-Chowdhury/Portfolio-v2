@@ -17,6 +17,7 @@ interface ProjectItem {
   title: string;
   category: string;
   summary: string;
+  image: string;
   lines: string[];
   tags: { name: string; icon?: React.ComponentType<{ className?: string }> }[];
   github?: string;
@@ -30,6 +31,7 @@ const realProjects: ProjectItem[] = [
     category: 'Embedded AI / Computer Vision',
     summary:
       'An AI-powered speed governance system that detects road speed-limit signs using YOLOv8 and computer vision to control vehicle speed in real-time.',
+    image: '/projects/speedsense-ai.jpg',
     lines: [
       'Line 01 [System Goal]: Developed an AI-powered speed governance system detecting road speed-limit signs using YOLOv8 and computer vision.',
       'Line 02 [Hardware Control]: Integrated ESP32, GPS, and motor-control hardware to translate detected speed limits into real-time vehicle speed control.',
@@ -60,6 +62,7 @@ const realProjects: ProjectItem[] = [
     category: 'AI & Geospatial Flood Intelligence',
     summary:
       'An AI-powered flood intelligence system assessing flood risk for individual locations, delivering early warnings and computing safe evacuation routes.',
+    image: '/projects/burha-luit.jpg',
     lines: [
       'Line 01 [System Purpose]: Built an AI-powered flood intelligence system assessing location-specific flood risk and providing early warnings.',
       'Line 02 [ML Risk Pipeline]: Developed a machine learning pipeline analyzing rainfall, river levels, elevation, terrain, and historical flood patterns.',
@@ -90,6 +93,7 @@ const realProjects: ProjectItem[] = [
     category: 'Software & Urban Graph Analytics',
     summary:
       'An algorithmic city planning and path optimization tool designed to model urban connectivity, graph networks, and resource allocation.',
+    image: '/projects/urbanpath.jpg',
     lines: [
       'Line 01 [Purpose]: Developed to model urban road networks and compute optimal infrastructure planning decisions.',
       'Line 02 [Planning Challenge]: Addresses traffic congestion and inefficient municipal expansion through graph-based modeling.',
@@ -204,8 +208,27 @@ export const Projects: React.FC = () => {
 
                   {/* Expanded 10-Line Technical Narrative */}
                   {isExpanded && (
-                    <div className="mt-4 pt-4 border-t border-zinc-900/80 space-y-2.5 bg-zinc-900/40 p-4 rounded-xl border border-zinc-800/60 animate-in fade-in duration-200">
-                      <div className="text-xs font-mono text-zinc-300 font-semibold mb-2">
+                    <div className="mt-4 pt-4 border-t border-zinc-900/80 space-y-4 bg-zinc-900/40 p-4 rounded-xl border border-zinc-800/60 animate-in fade-in duration-200">
+                      
+                      {/* Project Screenshot */}
+                      {project.image && (
+                        <div className="relative w-full overflow-hidden rounded-xl border border-zinc-700/60 shadow-2xl group/img">
+                          <img
+                            src={project.image}
+                            alt={`${project.title} dashboard screenshot`}
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover/img:scale-[1.02]"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                          <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                            <span className="px-2 py-0.5 rounded bg-black/70 backdrop-blur-sm border border-zinc-700/60 text-[10px] font-mono text-zinc-300">
+                              📸 Project Preview
+                            </span>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="text-xs font-mono text-zinc-300 font-semibold">
                         Technical Architecture & Implementation Story (10 Lines):
                       </div>
                       <div className="space-y-1.5 font-mono text-[11px] sm:text-xs text-zinc-300 leading-relaxed">

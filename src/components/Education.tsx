@@ -100,17 +100,20 @@ export const Education: React.FC = () => {
                 <div key={course.name} className="space-y-2">
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-semibold text-zinc-200">{course.name}</span>
-                    <div className="flex items-center gap-3">
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-[10px] text-zinc-400 font-mono">
+                    <div className="flex items-center gap-2.5">
+                      <span className="text-[11px] font-mono text-zinc-400 font-medium">
+                        {course.progress}%
+                      </span>
+                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800/80 text-[10px] text-zinc-400 font-mono">
                         {course.status}
                       </span>
                     </div>
                   </div>
 
                   {/* Elegant Monochrome Progress Bar */}
-                  <div className="w-full h-2 rounded-full bg-zinc-900 overflow-hidden p-0.5 border border-zinc-800/60">
+                  <div className="w-full h-2 rounded-full bg-zinc-900/90 overflow-hidden border border-zinc-800/80">
                     <div
-                      className="h-full rounded-full bg-white transition-all duration-700 ease-out"
+                      className="h-full rounded-full bg-gradient-to-r from-zinc-400 via-zinc-200 to-white transition-all duration-700 ease-out shadow-[0_0_8px_rgba(255,255,255,0.2)]"
                       style={{ width: `${course.progress}%` }}
                     />
                   </div>
